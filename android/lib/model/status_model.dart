@@ -1,32 +1,39 @@
+// To parse this JSON data, do
+//
+//     final statusModel = statusModelFromMap(jsonString);
+
+import 'package:meta/meta.dart';
 import 'dart:convert';
 
 class StatusModel {
   StatusModel({
-    this.temperature,
-    this.smoke,
-    this.status,
-    this.fire,
+    @required this.temperature,
+    @required this.humidity,
+    @required this.soil,
+    @required this.ph,
   });
 
   int temperature;
-  String smoke;
-  String status;
-  String fire;
+  int humidity;
+  int soil;
+  double ph;
+
   factory StatusModel.fromJson(String str) =>
       StatusModel.fromMap(json.decode(str));
 
   String toJson() => json.encode(toMap());
 
   factory StatusModel.fromMap(Map<dynamic, dynamic> json) => StatusModel(
-      temperature: json["temperature"] == null ? 0 : json["temperature"],
-      smoke: json["smoke"] == null ? 'N/A' : json["smoke"],
-      status: json["status"] == null ? 'N/A' : json["status"],
-      fire: json["fire"] == null ? 'N/A' : json["fire"]);
+        temperature: json["temperature"],
+        humidity: json["humidity"],
+        soil: json["soil"],
+        ph: json["ph"].toDouble(),
+      );
 
   Map<String, dynamic> toMap() => {
         "temperature": temperature,
-        "smoke": smoke,
-        "status": status,
-        "fire": fire
+        "humidity": humidity,
+        "soil": soil,
+        "ph": ph,
       };
 }

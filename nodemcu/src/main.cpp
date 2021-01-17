@@ -3,11 +3,12 @@
 #include <ESP8266WiFi.h>
 #include <WiFiUdp.h>
 #include "FirebaseESP8266.h"
-#define WIFI_SSID               "yai"
+#define WIFI_SSID               "bolt"
 #define WIFI_PASSWORD           "11111111"
-#define FIREBASE_HOST           "pemadam-kebakaran-b1d1f.firebaseio.com"
-#define FIREBASE_AUTH           "15KNXoZNcL8FUaeebJmlt4TTovZmepeyCHNJLjoZ"
-#define FIREBASE_FCM_SERVER_KEY "AAAAQpp2zDQ:APA91bEM11gwpXJNursnmxVVBj2aaL_JJzj2SrgPqyD4yB6JgRsxqswilDIZNz4keB12_xMzfYSYBoMcBHVCZURDsho_jKVy4PNftewcwp9PZt1-xxf_B0dh5W322enrWdEJKCfcfOxW"
+#define FIREBASE_HOST           "soil-monitoring-1a33b.firebaseio.com"
+#define FIREBASE_AUTH           "bALXIuTgCjfQ8HZj8niKC25vkDf1u8zh69hxbmW9"
+#define FIREBASE_FCM_SERVER_KEY "AAAAWFZQpe0:APA91bH4KfJc-J2uWdOCN9E90vuWVlW83mfPKCtrpPTJfk4gBcy3u78BaEF0oviV-Y9o9tlhRkApnRn1yDmNLVVcqGzqfvChtmWehsb6RCFKrDOH4McMIB5fDnDC5r0liTNoWcWVJDB5"
+
 FirebaseData firebaseData;
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP, "pool.ntp.org", 0);
@@ -56,35 +57,16 @@ void loop()
   /*
     Data dummy
   */
-  int suhu = 30 + (rand() % 10);
-  int gas = 95 + (rand() % 10);
-  String status = "Aman";
-  String detail = "Tidak terjadi kebakaran";
-  FirebaseJson realtime;
+  int temperature = 30 + (rand() % 10);
+  int humidity = rand()%100;
+  int soil = rand()%100;
+  float ph = rand()%10;
   FirebaseJson history;
-  if (gas > 100)
-  {
-    status = "Waspada";
-    detail = "Gas melebihi 100 ppm";
-    sendMessage(status, detail);
-    delay(5000);
-  }
-  if (suhu > 35)
-  {
-    status = "Bahaya";
-    detail = "Ada api dan suhu meningkat";
-    sendMessage(status, detail);
-    delay(5000);
-  }
-  realtime.add("temperature", suhu);
-  realtime.add("smoke", gas > 100 ? "Hidup" : "Mati");
-  realtime.add("status", status);
-
-  history.add("status", status);
-  history.add("detail", detail);
+  history.add("temperature", temperature);
+  history.add("humidity", humidity);
+  history.add("soil", soil);
+  history.add("ph",ph);
   history.add("timestamp", (String)timeClient.getEpochTime());
-  // history.add("timestamp",)
-  Firebase.setJSON(firebaseData, "/realtime", realtime);
   Firebase.pushJSON(firebaseData, "/history",history);
   delay(5000);
 }

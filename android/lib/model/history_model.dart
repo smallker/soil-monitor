@@ -1,18 +1,23 @@
 // To parse this JSON data, do
 //
-//     final statusModel = statusModelFromMap(jsonString);
+//     final historyModel = historyModelFromMap(jsonString);
 
+import 'package:meta/meta.dart';
 import 'dart:convert';
 
 class HistoryModel {
   HistoryModel({
-    this.status,
-    this.detail,
-    this.timestamp,
+    @required this.temperature,
+    @required this.humidity,
+    @required this.soil,
+    @required this.ph,
+    @required this.timestamp,
   });
 
-  String status;
-  String detail;
+  int temperature;
+  int humidity;
+  int soil;
+  double ph;
   int timestamp;
 
   factory HistoryModel.fromJson(String str) =>
@@ -21,14 +26,18 @@ class HistoryModel {
   String toJson() => json.encode(toMap());
 
   factory HistoryModel.fromMap(Map<dynamic, dynamic> json) => HistoryModel(
-        status: json["status"],
-        detail: json["detail"],
-        timestamp: int.tryParse(json["timestamp"]) * 1000,
+        temperature: json["temperature"],
+        humidity: json["humidity"],
+        soil: json["soil"],
+        ph: json["ph"].toDouble(),
+        timestamp: int.parse(json["timestamp"]) * 1000,
       );
 
-  Map<dynamic, dynamic> toMap() => {
-        "status": status,
-        "detail": detail,
+  Map<String, dynamic> toMap() => {
+        "temperature": temperature,
+        "humidity": humidity,
+        "soil": soil,
+        "ph": ph,
         "timestamp": timestamp,
       };
 }

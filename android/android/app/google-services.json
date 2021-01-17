@@ -1,34 +1,33 @@
 {
   "project_info": {
-    "project_number": "286059318324",
-    "firebase_url": "https://pemadam-kebakaran-b1d1f.firebaseio.com",
-    "project_id": "pemadam-kebakaran-b1d1f",
-    "storage_bucket": "pemadam-kebakaran-b1d1f.appspot.com"
+    "project_number": "379405247981",
+    "project_id": "soil-monitoring-1a33b",
+    "storage_bucket": "soil-monitoring-1a33b.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:286059318324:android:ff9f7610b3474fe410ce61",
+        "mobilesdk_app_id": "1:379405247981:android:f412083da7eaa5d18e73e4",
         "android_client_info": {
-          "package_name": "com.smallker.kebakaran"
+          "package_name": "com.smallker.soilmonitor"
         }
       },
       "oauth_client": [
         {
-          "client_id": "286059318324-uag2bqo3mflleh4fveg9egc2e78bob5r.apps.googleusercontent.com",
+          "client_id": "379405247981-tjbc7n6b8gfn3b4shrt0su81otdqfnr9.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAxeHip4chTudK7p_1pMWbEflLhBAnf924"
+          "current_key": "AIzaSyDjLR_kIdP2eyAmNwQpN3Bo2PRSzEnjRD8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "286059318324-uag2bqo3mflleh4fveg9egc2e78bob5r.apps.googleusercontent.com",
+              "client_id": "379405247981-tjbc7n6b8gfn3b4shrt0su81otdqfnr9.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

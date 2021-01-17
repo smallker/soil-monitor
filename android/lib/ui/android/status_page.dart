@@ -1,8 +1,10 @@
 import 'package:air_quality/controller/status_ctl.dart';
+import 'package:air_quality/widgets/my_colors.dart';
 import 'package:air_quality/widgets/mytext.dart';
 import 'package:air_quality/widgets/pixel.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
+import 'package:lottie/lottie.dart';
 
 class StatusPage extends StatelessWidget {
   Widget _header() {
@@ -17,13 +19,13 @@ class StatusPage extends StatelessWidget {
           children: [
             Flexible(
               flex: 3,
-              child: Image.asset('assets/icon.png'),
+              child: Lottie.asset('assets/plant.json'),
             ),
             Flexible(
               flex: 1,
               child: MyText(
-                text: 'Pemadam Kebakaran',
-                color: Colors.orange,
+                text: 'Soil Monitoring',
+                color: MyColors.embers,
               ),
             )
           ],
@@ -44,7 +46,7 @@ class StatusPage extends StatelessWidget {
         Pixel.x * 2,
       ),
       decoration: BoxDecoration(
-        color: Colors.orange,
+        color: MyColors.embers,
         borderRadius: BorderRadius.circular(
           Pixel.x * 5,
         ),
@@ -117,30 +119,31 @@ class StatusPage extends StatelessWidget {
                 children: [
                   _sensorStatus(
                     icon: Icons.thermostat_rounded,
-                    title: 'Suhu',
+                    title: 'Temperature',
                     subtitle: snapshot.status == null
                         ? '00 C'
                         : '${snapshot.status.temperature}° C',
                   ),
                   _sensorStatus(
                     icon: Icons.cloud,
-                    title: 'Sensor Gas',
+                    title: 'Humidity',
                     subtitle: snapshot.status == null
-                        ? 'Mati'
-                        : snapshot.status.smoke,
+                        ? '0'
+                        : '${snapshot.status.humidity} %',
                   ),
                   _sensorStatus(
-                    icon: Icons.fire_extinguisher,
-                    title: 'Sensor Api',
-                    subtitle:
-                        snapshot.status == null ? 'N/A' : snapshot.status.fire,
-                  ),
-                  _sensorStatus(
-                    icon: Icons.info_outline,
-                    title: 'Status',
+                    icon: Icons.fence,
+                    title: 'Soil Moisture',
                     subtitle: snapshot.status == null
                         ? 'N/A'
-                        : snapshot.status.status,
+                        : '${snapshot.status.soil}%',
+                  ),
+                  _sensorStatus(
+                    icon: Icons.filter_list_alt,
+                    title: 'pH',
+                    subtitle: snapshot.status == null
+                        ? 'N/A'
+                        : '${snapshot.status.ph}',
                   ),
                 ],
               );

@@ -1,8 +1,8 @@
 import 'package:air_quality/controller/page_ctl.dart';
 import 'package:air_quality/services/init.dart';
 import 'package:air_quality/ui/android/history_page.dart';
-import 'package:air_quality/ui/android/notification_page.dart';
 import 'package:air_quality/ui/android/status_page.dart';
+import 'package:air_quality/widgets/my_colors.dart';
 import 'package:air_quality/widgets/mytext.dart';
 import 'package:air_quality/widgets/pixel.dart';
 import 'package:flutter/material.dart';
@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.orange,
+                  color: MyColors.embers,
                 ),
               ),
               ListTile(
@@ -70,15 +70,15 @@ class _HomePageState extends State<HomePage> {
                 ),
                 onTap: () => snapshot.updatePage(0),
               ),
-              ListTile(
-                leading: Icon(Icons.notifications),
-                title: MyText(
-                  text: 'Notifikasi',
-                  color: Colors.grey,
-                  fontSize: Pixel.x * 5,
-                ),
-                onTap: () => snapshot.updatePage(1),
-              ),
+              // ListTile(
+              //   leading: Icon(Icons.notifications),
+              //   title: MyText(
+              //     text: 'Notifikasi',
+              //     color: Colors.grey,
+              //     fontSize: Pixel.x * 5,
+              //   ),
+              //   onTap: () => snapshot.updatePage(1),
+              // ),
               ListTile(
                 leading: Icon(Icons.timelapse),
                 title: MyText(
@@ -86,7 +86,7 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.grey,
                   fontSize: Pixel.x * 5,
                 ),
-                onTap: () => snapshot.updatePage(2),
+                onTap: () => snapshot.updatePage(1),
               ),
             ],
           ),
@@ -97,12 +97,12 @@ class _HomePageState extends State<HomePage> {
 
   List<Widget> body = [
     StatusPage(),
-    NotificationPage(),
+    // NotificationPage(),
     HistoryPage(),
   ];
   List<String> title = [
     'Status sensor',
-    'Notifikasi',
+    // 'Notifikasi',
     'Histori',
   ];
   @override
@@ -113,7 +113,7 @@ class _HomePageState extends State<HomePage> {
       initState: Init.init(),
       builder: (snapshot) {
         return Container(
-          color: Colors.orange,
+          color: MyColors.embers,
           child: SafeArea(
             child: Scaffold(
               backgroundColor: Colors.white,

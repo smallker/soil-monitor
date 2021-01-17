@@ -27,7 +27,7 @@ class _NotificationPageState extends State<NotificationPage> {
             Flexible(
               flex: 1,
               child: MyText(
-                text: 'Pemadam Kebakaran',
+                text: 'Soil Monitor',
                 color: Colors.orange,
               ),
             )
@@ -88,20 +88,37 @@ class _NotificationPageState extends State<NotificationPage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Icon(
-                                Icons.warning_rounded,
+                                Icons.cloud,
                                 size: Pixel.x * 15,
                                 color: Colors.white,
                               ),
                               MyText(
-                                text: snapshot.history == null
-                                    ? 'N/A'
-                                    : snapshot.history.last.status,
+                                text:
+                                    snapshot.history == null ? 'N/A' : 'Status',
                                 fontSize: Pixel.x * 7,
                               ),
                               MyText(
                                 text: snapshot.history == null
                                     ? 'N/A'
-                                    : snapshot.history.last.detail,
+                                    : 'Temperature : ${snapshot.history.last.temperature}',
+                                fontSize: Pixel.x * 5,
+                              ),
+                              MyText(
+                                text: snapshot.history == null
+                                    ? 'N/A'
+                                    : 'Humidity : ${snapshot.history.last.humidity}',
+                                fontSize: Pixel.x * 5,
+                              ),
+                              MyText(
+                                text: snapshot.history == null
+                                    ? 'N/A'
+                                    : 'Soil Moisture : ${snapshot.history.last.soil}',
+                                fontSize: Pixel.x * 5,
+                              ),
+                              MyText(
+                                text: snapshot.history == null
+                                    ? 'N/A'
+                                    : 'pH : ${snapshot.history.last.ph}',
                                 fontSize: Pixel.x * 5,
                               ),
                               MyText(
