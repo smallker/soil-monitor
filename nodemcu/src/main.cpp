@@ -5,9 +5,9 @@
 #include "FirebaseESP8266.h"
 #define WIFI_SSID               "bolt"
 #define WIFI_PASSWORD           "11111111"
-#define FIREBASE_HOST           "soil-monitoring-1a33b.firebaseio.com"
-#define FIREBASE_AUTH           "bALXIuTgCjfQ8HZj8niKC25vkDf1u8zh69hxbmW9"
-#define FIREBASE_FCM_SERVER_KEY "AAAAWFZQpe0:APA91bH4KfJc-J2uWdOCN9E90vuWVlW83mfPKCtrpPTJfk4gBcy3u78BaEF0oviV-Y9o9tlhRkApnRn1yDmNLVVcqGzqfvChtmWehsb6RCFKrDOH4McMIB5fDnDC5r0liTNoWcWVJDB5"
+#define FIREBASE_HOST           "soil-monitor-db907-default-rtdb.firebaseio.com"
+#define FIREBASE_AUTH           "wSlAQ5p06hxhvYoFqAVWlTYIb7RDR9O5UDTQqjEB"
+#define FIREBASE_FCM_SERVER_KEY "AAAAM8GY_gc:APA91bEh7kMjjG7_SlcZIfZhdFRRpiuk4fqrV1llfXRSBHlCFY_BaTIll0hfyevfaUMEEB-nS6jlUhX3fWRyQezZaPTwCobZZtjsEwVo0XMrYmrnBoT8ilR_gPmUvBfe2iODMsBIG7MO"
 
 FirebaseData firebaseData;
 WiFiUDP ntpUDP;
