@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "379405247981",
-    "project_id": "soil-monitoring-1a33b",
-    "storage_bucket": "soil-monitoring-1a33b.appspot.com"
+    "project_number": "222291361287",
+    "firebase_url": "https://soil-monitor-db907-default-rtdb.firebaseio.com",
+    "project_id": "soil-monitor-db907",
+    "storage_bucket": "soil-monitor-db907.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:379405247981:android:f412083da7eaa5d18e73e4",
+        "mobilesdk_app_id": "1:222291361287:android:b2dff989f295f0a580b4a2",
         "android_client_info": {
-          "package_name": "com.smallker.soilmonitor"
+          "package_name": "com.app.soilmonitor"
         }
       },
       "oauth_client": [
         {
-          "client_id": "379405247981-tjbc7n6b8gfn3b4shrt0su81otdqfnr9.apps.googleusercontent.com",
+          "client_id": "222291361287-8b42nbfffsljj7okgkuq2bol7n8nljjg.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDjLR_kIdP2eyAmNwQpN3Bo2PRSzEnjRD8"
+          "current_key": "AIzaSyALrah6ilojLzt7NNtPg-VK8FWskN1yDrk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "379405247981-tjbc7n6b8gfn3b4shrt0su81otdqfnr9.apps.googleusercontent.com",
+              "client_id": "222291361287-8b42nbfffsljj7okgkuq2bol7n8nljjg.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

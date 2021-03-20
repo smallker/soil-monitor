@@ -41,6 +41,7 @@ class FcmService {
               fontSize: Pixel.x * 4,
             ),
           ),
+          // ignore: deprecated_member_use
           confirm: FlatButton.icon(
             label: MyText(
               text: 'OK',
@@ -66,6 +67,7 @@ class FcmService {
               fontSize: Pixel.x * 4,
             ),
           ),
+          // ignore: deprecated_member_use
           confirm: FlatButton.icon(
             label: MyText(
               text: 'OK',
@@ -90,6 +92,7 @@ class FcmService {
               fontSize: Pixel.x * 4,
             ),
           ),
+          // ignore: deprecated_member_use
           confirm: FlatButton.icon(
             label: MyText(
               text: 'OK',

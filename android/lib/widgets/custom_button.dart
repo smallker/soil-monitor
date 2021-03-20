@@ -29,6 +29,7 @@ class CustomButton extends StatelessWidget {
               blurRadius: 3,
             )
           ]),
+      // ignore: deprecated_member_use
       child: FlatButton(
         child: Text(hint,
             style: GoogleFonts.poppins(

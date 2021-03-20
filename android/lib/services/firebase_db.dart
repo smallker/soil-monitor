@@ -1,7 +1,6 @@
 import 'package:air_quality/controller/history_ctl.dart';
 import 'package:air_quality/controller/status_ctl.dart';
 import 'package:air_quality/model/history_model.dart';
-import 'package:air_quality/model/status_model.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:get/get.dart';
 
@@ -21,7 +20,7 @@ class FirebaseDb {
 
   static history() async {
     final ctl = Get.put(HistoryCtl());
-    final realtime_ctl = Get.put(StatusCtl());
+    final realtimeCtl = Get.put(StatusCtl());
     Query ref = FirebaseDatabase.instance.reference().child('/history');
     ref.onValue.listen(
       (event) {
@@ -40,7 +39,7 @@ class FirebaseDb {
         model.sort((a, b) => a.timestamp.compareTo(b.timestamp));
         // model.reversed.toList();
         ctl.updateHistory(model);
-        realtime_ctl.updateRealtime(model.last);
+        realtimeCtl.updateRealtime(model?.last);
       },
     );
   }
